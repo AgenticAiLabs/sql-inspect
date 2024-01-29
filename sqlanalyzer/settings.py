@@ -53,7 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "sqlquery.middleware.new_middleware"
+    "sql-inspect.middleware.SQLInspectMiddleware"
 ]
 
 ROOT_URLCONF = "sqlanalyzer.urls"

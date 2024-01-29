@@ -7,11 +7,11 @@ include = ["sql-inspect"]
 
 [project]
 name = "sql-inspect"
-version = "1.0.0"
-description = "A django middleware package for logging database queries sql to console"
+version = "1.0.2"
+description = "A django middleware package for logging database SQL queries to console"
 readme = "README.md"
-license = { file = "LICENSE"}
-authors = [{ name = "Paul Onyekwelu"}]
+license = { text = "MIT"}
+authors = [{ name = "Paul Onyekwelu", email = "paulonyekweluo@gmail.com"}]
 
 keywords = ["sql", "logging", "logger", "console", "Terminal"]
 
