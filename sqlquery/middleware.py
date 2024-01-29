@@ -36,6 +36,7 @@ def new_middleware(get_response):
             print(f"Number of query(s): {q_num}")
             print(f"Number of duplicates: {q_num - len(duplicates)}")
             print("-" * num_lines, "\n")
-            return response
+        
+        return response
 
     return middleware
