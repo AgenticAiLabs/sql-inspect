@@ -7,7 +7,7 @@ include = ["sql-inspect"]
 
 [project]
 name = "sql-inspect"
-version = "1.0.3"
+version = "1.0.0"
 description = "A django middleware package for logging database SQL queries to console"
 readme = "README.md"
 license = { text = "MIT"}
@@ -20,4 +20,4 @@ requires-python = ">=3.11"
 dependencies = ["sqlparse>=0.4.4", "Pygments>=2.17.2"]
 
 [project.urls]
-Homepage = "http://github.com/PaulOnyekwelu"
+Homepage = "hhttps://github.com/PaulOnyekwelu/dj-sql-inspect"

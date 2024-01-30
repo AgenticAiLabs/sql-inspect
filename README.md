@@ -1,4 +1,6 @@
-This is the test version of the sql-inspect package. It inspect view request to database
+# SQL-Inspect
+
+The SQ:-Inspect package is a django middleware that inspects view request to database
 and print the SQL translation of the queries to the terminal.
 
 ## Installation
