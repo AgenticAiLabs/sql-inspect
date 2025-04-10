@@ -573,3 +573,8 @@ queries = [
     {"sql": "SELECT * FROM users WHERE active = true", "time": 0.03},
     {"sql": "SELECT * FROM users WHERE active = false", "time": 0.02},
 ]
+queries = [
+    {"sql": "SELECT * FROM users WHERE active = true", "time": 0.01},
+    {"sql": "SELECT * FROM users WHERE active = true", "time": 0.03},
+    {"sql": "SELECT * FROM users WHERE active = false", "time": 0.02},
+]
