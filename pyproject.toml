@@ -20,5 +20,5 @@ requires-python = ">=3.11"
 dependencies = ["sqlparse>=0.4.4", "Pygments>=2.17.2"]
 
 [project.urls]
-Homepage = "https://github.com/PaulOnyekwelu/dj-sql-inspect"
-Issues = "https://github.com/PaulOnyekwelu/dj-sql-inspect/issues"
+Homepage = "https://github.com/AgenticAiLabs/sql-inspect"
+Issues = "https://github.com/AgenticAiLabs/sql-inspect/issues"
