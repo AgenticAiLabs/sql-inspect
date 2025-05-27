@@ -3,11 +3,19 @@ from .models import Product
 
 
 def test_endpoint(request):
-    query_count = request.GET.get("query_count", 1)
-
+    query_count = int(request.GET.get("query_count", 1))
     qs = None
-    for i in range(int(query_count)):
+    for _ in range(query_count):
         qs = Product.objects.all()
         qs = qs.count()
-
     return HttpResponse(qs)
+
+
+async def test_endpoint_async(request):
+    query_count = int(request.GET.get("query_count", 1))
+
+    for _ in range(query_count):
+        # Perform DB access in async-compatible way
+        await Product.objects.all().aexists()
+
+    return HttpResponse("OK")
