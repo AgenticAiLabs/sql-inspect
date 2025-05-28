@@ -7,6 +7,7 @@ colorama==0.4.6
 Django==5.0.1
 docutils==0.20.1
 Faker==22.5.1
+id==1.5.0
 idna==3.6
 importlib-metadata==7.0.1
 iniconfig==2.0.0
@@ -16,7 +17,7 @@ markdown-it-py==3.0.0
 mdurl==0.1.2
 more-itertools==10.2.0
 nh3==0.2.15
-packaging==23.2
+packaging==25.0
 pkginfo==1.10.0
 pluggy==1.6.0
 Pygments==2.17.2
@@ -32,9 +33,9 @@ requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==13.7.0
 six==1.16.0
--e git+ssh://git@github.com/AgenticAiLabs/sql-inspect.git@74f3d373fffd672aa19fc8863c344d39b8254ade#egg=sql_inspect
+-e git+ssh://git@github.com/AgenticAiLabs/sql-inspect.git@ac8e77eda62be38a4b1ce8b60f5dcddf0d7d4092#egg=sql_inspect
 sqlparse==0.4.4
-twine==4.0.2
+twine==6.1.0
 tzdata==2025.2
 urllib3==2.1.0
 zipp==3.17.0

@@ -8,19 +8,15 @@ include = ["sql_inspect"]
 [project]
 name = "sql-inspect"
 version = "2.0.0"
-description = "Enhanced Django middleware for monitoring, analyzing, and optimizing database SQL queries with async support, intelligent caching, and performance insights"
+description = "Enhanced Django middleware for monitoring, analyzing, and optimizing database SQL queries"
 readme = "README.md"
 requires-python = ">=3.8"
-license = "MIT"
-license-files = ["LICENSE"]
-authors = [
-    { name = "Paul Onyekwelu", email = "paulonyekweluo@gmail.com" }
-]
+license = {text = "MIT"}
+authors = [{ name = "Paul Onyekwelu", email = "paulonyekweluo@gmail.com" }]
 
 keywords = [
-    "django", "sql", "database", "monitoring", "logging", "performance",
-    "debugging", "middleware", "async", "optimization", "query-analysis",
-    "n+1-detection", "caching"
+    "django", "sql", "monitoring", "logging", "performance",
+    "debugging", "middleware", "async", "optimization"
 ]
 
 dependencies = [
@@ -30,33 +26,6 @@ dependencies = [
     "cachetools"
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "pytest-django>=4.5.0",
-    "pytest-asyncio>=0.21.0",
-    "pytest-cov>=4.0.0",
-    "black>=23.0.0",
-    "isort>=5.12.0",
-    "flake8>=6.0.0",
-    "mypy>=1.0.0",
-    "django-stubs>=4.2.0",
-    "pre-commit>=3.0.0"
-]
-
-testing = [
-    "pytest>=7.0.0",
-    "pytest-django>=4.5.0",
-    "pytest-asyncio>=0.21.0",
-    "pytest-cov>=4.0.0",
-    "tox>=4.0.0",
-    "coverage>=7.0.0",
-    "pytest-asyncio==1.0.0"
-]
-
 [project.urls]
-Homepage = "https://github.com/PaulOnyekwelu/sql-inspect"
-Documentation = "https://github.com/PaulOnyekwelu/sql-inspect/blob/main/README.md"
-Repository = "https://github.com/AgenticAiLabs/sql-inspect"
+Homepage = "https://github.com/AgenticAiLabs/sql-inspect"
 Issues = "https://github.com/AgenticAiLabs/sql-inspect/issues"
-Changelog = "https://github.com/AgenticAiLabs/sql-inspect/blob/main/CHANGELOG.md"
