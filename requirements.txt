@@ -17,7 +17,7 @@ mdurl==0.1.2
 more-itertools==10.2.0
 nh3==0.2.15
 packaging==23.2
-pkginfo==1.9.6
+pkginfo==1.10.0
 pluggy==1.6.0
 Pygments==2.17.2
 pyproject_hooks==1.0.0
@@ -32,7 +32,7 @@ requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==13.7.0
 six==1.16.0
--e git+ssh://git@github.com/AgenticAiLabs/sql-inspect.git@6d7967bad76d1c5ff526be09b6760499c17ee600#egg=sql_inspect
+-e git+ssh://git@github.com/AgenticAiLabs/sql-inspect.git@74f3d373fffd672aa19fc8863c344d39b8254ade#egg=sql_inspect
 sqlparse==0.4.4
 twine==4.0.2
 tzdata==2025.2

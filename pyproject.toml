@@ -1,72 +1,27 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools>=69.0.3", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["sql_inspect*"]
-exclude = ["tests*", "docs*", "examples*"]
-
-[tool.setuptools.package-data]
-sql_inspect = ["py.typed"]
+include = ["sql_inspect"]
 
 [project]
 name = "sql-inspect"
 version = "2.0.0"
 description = "Enhanced Django middleware for monitoring, analyzing, and optimizing database SQL queries with async support, intelligent caching, and performance insights"
 readme = "README.md"
-license = { text = "MIT" }
+requires-python = ">=3.8"
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
-    { name = "Paul Onyekwelu", email = "paulonyekweluo@gmail.com" }
-]
-maintainers = [
     { name = "Paul Onyekwelu", email = "paulonyekweluo@gmail.com" }
 ]
 
 keywords = [
-    "django",
-    "sql",
-    "database",
-    "monitoring",
-    "logging",
-    "performance",
-    "debugging",
-    "middleware",
-    "async",
-    "optimization",
-    "query-analysis",
-    "n+1-detection",
-    "caching"
+    "django", "sql", "database", "monitoring", "logging", "performance",
+    "debugging", "middleware", "async", "optimization", "query-analysis",
+    "n+1-detection", "caching"
 ]
-
-classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Environment :: Web Environment",
-    "Framework :: Django",
-    "Framework :: Django :: 3.2",
-    "Framework :: Django :: 4.0",
-    "Framework :: Django :: 4.1",
-    "Framework :: Django :: 4.2",
-    "Framework :: Django :: 5.0",
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Topic :: Database",
-    "Topic :: Internet :: WWW/HTTP",
-    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-    "Topic :: Software Development :: Debuggers",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-    "Topic :: System :: Logging",
-    "Topic :: System :: Monitoring",
-    "Typing :: Typed"
-]
-
-requires-python = ">=3.8"
 
 dependencies = [
     "Django>=3.2",
@@ -89,12 +44,6 @@ dev = [
     "pre-commit>=3.0.0"
 ]
 
-docs = [
-    "sphinx>=6.0.0",
-    "sphinx-rtd-theme>=1.2.0",
-    "myst-parser>=1.0.0"
-]
-
 testing = [
     "pytest>=7.0.0",
     "pytest-django>=4.5.0",
@@ -105,108 +54,9 @@ testing = [
     "pytest-asyncio==1.0.0"
 ]
 
-performance = [
-    "psutil>=5.9.0",
-    "memory-profiler>=0.61.0"
-]
-
 [project.urls]
 Homepage = "https://github.com/PaulOnyekwelu/sql-inspect"
 Documentation = "https://github.com/PaulOnyekwelu/sql-inspect/blob/main/README.md"
 Repository = "https://github.com/AgenticAiLabs/sql-inspect"
 Issues = "https://github.com/AgenticAiLabs/sql-inspect/issues"
 Changelog = "https://github.com/AgenticAiLabs/sql-inspect/blob/main/CHANGELOG.md"
-"Bug Reports" = "https://github.com/AgenticAiLabs/sql-inspect/issues"
-
-[tool.black]
-line-length = 88
-target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
-include = '\.pyi?$'
-extend-exclude = '''
-/(
-    \.eggs
-  | \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-  | migrations
-)/
-'''
-
-[tool.isort]
-profile = "black"
-multi_line_output = 3
-line_length = 88
-known_django = "django"
-known_first_party = "sql_inspect"
-sections = ["FUTURE", "STDLIB", "DJANGO", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
-
-[tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "tests.settings"
-python_files = ["tests.py", "test_*.py", "*_tests.py"]
-testpaths = ["tests"]
-addopts = [
-    "--strict-markers",
-    "--strict-config",
-    "--cov=sql_inspect",
-    "--cov-report=term-missing",
-    "--cov-report=html",
-    "--cov-report=xml",
-    "--cov-fail-under=85"
-]
-markers = [
-    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
-    "integration: marks tests as integration tests",
-    "unit: marks tests as unit tests",
-    "async_test: marks tests that test async functionality"
-]
-
-[tool.mypy]
-python_version = "3.8"
-check_untyped_defs = true
-ignore_missing_imports = true
-warn_unused_ignores = true
-warn_redundant_casts = true
-warn_unused_configs = true
-plugins = ["mypy_django_plugin.main"]
-
-[tool.django-stubs]
-django_settings_module = "tests.settings"
-
-[tool.coverage.run]
-source = ["sql_inspect"]
-omit = [
-    "*/tests/*",
-    "*/test_*.py",
-    "*/__pycache__/*",
-    "*/migrations/*",
-    "setup.py"
-]
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "raise AssertionError",
-    "raise NotImplementedError",
-    "if __name__ == .__main__.:",
-    "if TYPE_CHECKING:",
-    "@abstract"
-]
-
-[tool.flake8]
-max-line-length = 88
-extend-ignore = ["E203", "W503", "E501"]
-exclude = [
-    ".git",
-    "__pycache__",
-    "migrations",
-    ".venv",
-    "build",
-    "dist"
-]
