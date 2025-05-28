@@ -1,6 +1,6 @@
 import pytest
 import re
-from sql_inspect._core import analyze_queries
+from sql_inspect import inspect_queries
 
 
 def strip_ansi(text):
@@ -33,8 +33,8 @@ def strip_ansi(text):
         ),
     ],
 )
-def test_analyze_queries_basic(queries, batch_similar, expected_counts):
-    result = strip_ansi(analyze_queries(queries, batch_similar=batch_similar))
+def test_inspect_queries_basic(queries, batch_similar, expected_counts):
+    result = strip_ansi(inspect_queries(queries, batch_similar=batch_similar))
 
     if batch_similar:
         assert f"Total queries: {expected_counts['total']}" in result
@@ -49,21 +49,21 @@ def test_analyze_queries_basic(queries, batch_similar, expected_counts):
             assert f"Query {i+1}:" in result
 
 
-def test_analyze_queries_empty_list():
-    result = strip_ansi(analyze_queries([], batch_similar=True))
+def test_inspect_queries_empty_list():
+    result = strip_ansi(inspect_queries([], batch_similar=True))
     assert "Total queries: 0" in result
     assert "Unique queries: 0" in result or "Unique query patterns: 0" in result
     assert "Duplicates: 0" in result
 
 
-def test_analyze_queries_query_normalization():
+def test_inspect_queries_query_normalization():
     queries = [
         {"sql": "SELECT * FROM table WHERE id = 1", "time": 0.01},
         {"sql": "SELECT * FROM table WHERE id = 2", "time": 0.02},
         {"sql": "SELECT * FROM table WHERE id = 3", "time": 0.03},
     ]
     result = strip_ansi(
-        analyze_queries(
+        inspect_queries(
             queries,
             batch_similar=True,
             collapse_numeric_literals=True,  # Fix: enable numeric normalization
@@ -74,13 +74,13 @@ def test_analyze_queries_query_normalization():
     assert "Duplicates: 2" in result
 
 
-def test_analyze_queries_formatting_and_timing_aggregation():
+def test_inspect_queries_formatting_and_timing_aggregation():
     queries = [
         {"sql": "SELECT * FROM users WHERE active = true", "time": 0.01},
         {"sql": "SELECT * FROM users WHERE active = true", "time": 0.03},
         {"sql": "SELECT * FROM users WHERE active = false", "time": 0.02},
     ]
-    result = strip_ansi(analyze_queries(queries, batch_similar=True))
+    result = strip_ansi(inspect_queries(queries, batch_similar=True))
     assert "Total time:" in result
     assert "Avg time:" in result
     assert "Min/Max:" in result

@@ -106,7 +106,7 @@ Simply add the middleware and SQL-Inspect will automatically monitor all databas
 You can also analyze queries programmatically:
 
 ```python
-from sql_inspect import analyze_queries
+from sql_inspect import inspect_queries
 
 # Your query data
 queries_data = [
@@ -116,11 +116,11 @@ queries_data = [
 ]
 
 # Analyze with batching
-result = analyze_queries(queries_data, batch_similar=True)
+result = inspect_queries(queries_data, batch_similar=True)
 print(result)
 
 # Analyze individual queries
-result = analyze_queries(queries_data, batch_similar=False)
+result = inspect_queries(queries_data, batch_similar=False)
 print(result)
 ```
 

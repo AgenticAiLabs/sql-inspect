@@ -5,11 +5,11 @@ sql_inspect.core
 Core engine for SQL-Inspect: caching, batching, formatting, and streaming query insights.
 Designed to be imported lazily to keep Django startup light.
 
-Only the `analyze_queries` function is intended for public use; all other
+Only the `inspect_queries` function is intended for public use; all other
 components are used internally by the middleware or for advanced usage.
 
 Usage:
-    from sql_inspect.core import analyze_queries
+    from sql_inspect import inspect_queries
 """
 
 from __future__ import annotations
@@ -292,7 +292,7 @@ def _process_queries(
     _process_queries_shared(cfg, cache, out, log_func)
 
 
-def analyze_queries(
+def inspect_queries(
     queries: List[dict],
     *,
     batch_similar: bool = True,
