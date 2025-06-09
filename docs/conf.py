@@ -9,7 +9,7 @@
 project = 'sql-inspect'
 copyright = '2025, Paul Onyekwelu'
 author = 'Paul Onyekwelu'
-release = '2.0.0'
+release = '2.0.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
